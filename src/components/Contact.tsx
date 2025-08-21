@@ -29,7 +29,7 @@ const Contact = () => {
       setIsSubmitting(true);
 
       try {
-         await emailjs.sendForm('service_lkqrcfu', 'template_s55xrpo', formRef.current!, 'PpO-oTMPvZY8QLWK3');
+         await emailjs.sendForm('service_jwilmnm', 'template_oy3hcio', formRef.current!, 'z8EmYIq6I0lT-LKsZ');
 
          setSuccess(true);
          setFormData({ name: '', email: '', message: '' });
