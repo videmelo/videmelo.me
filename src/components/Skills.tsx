@@ -58,11 +58,11 @@ const Skills = () => {
       {
          title: 'Development Laguages',
          skills: [
-            { name: 'JavaScript', level: 90, icon: '🟨' },
-            { name: 'TypeScript', level: 85, icon: '🔷' },
-            { name: 'Python', level: 30, icon: '🐍' },
+            { name: 'JavaScript', level: 70, icon: '🟨' },
+            { name: 'TypeScript', level: 65, icon: '🔷' },
+            { name: 'Python', level: 25, icon: '🐍' },
             { name: 'Java', level: 20, icon: '☕' },
-            { name: 'C', level: 30, icon: '⚙️' },
+            { name: 'C', level: 20, icon: '⚙️' },
             { name: 'C++', level: 20, icon: '🛠️' },
          ],
          baseDelay: 200,
@@ -70,11 +70,11 @@ const Skills = () => {
       {
          title: 'Front-end Development',
          skills: [
-            { name: 'HTML', level: 95, icon: '🟧' },
-            { name: 'CSS', level: 95, icon: '🔵' },
+            { name: 'HTML', level: 90, icon: '🟧' },
+            { name: 'CSS', level: 85, icon: '🔵' },
             { name: 'Tailwind', level: 90, icon: '🌀' },
             { name: 'React', level: 65, icon: '🧩' },
-            { name: 'Next', level: 50, icon: '🔗' },
+            { name: 'Next', level: 35, icon: '🔗' },
          ],
          baseDelay: 600,
       },
@@ -82,7 +82,7 @@ const Skills = () => {
          title: 'Back-end Development',
          skills: [
             { name: 'Node', level: 60, icon: '🟢' },
-            { name: 'MySQL', level: 45, icon: '🐬' },
+            { name: 'MySQL', level: 35, icon: '🐬' },
             { name: 'PostgreSQL', level: 45, icon: '🐘' },
             { name: 'Docker', level: 40, icon: '🐳' },
             { name: 'AWS', level: 20, icon: '☁️' },
