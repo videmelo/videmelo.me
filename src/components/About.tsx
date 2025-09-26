@@ -8,11 +8,10 @@ const About = () => {
 
    const experiences = [
       {
-         title: 'Full-Stack Developer',
-         company: 'Your Company',
-         period: 'Someday',
-         description:
-            'At your company, I would contribute to web development projects, implementing modern backend and frontend solutions while applying the technical skills I have acquired through personal projects and continuous learning.',
+         title: 'Sooftware Developer Intern',
+         company: 'Mindtech',
+         period: 'Sep. 2025 - Concurrently',
+         description: '',
       },
    ];
 
