@@ -8,7 +8,7 @@ const About = () => {
 
    const experiences = [
       {
-         title: 'Sooftware Developer Intern',
+         title: 'Software Developer Intern',
          company: 'Mindtech',
          period: 'Sep. 2025 - Concurrently',
          description: '',
