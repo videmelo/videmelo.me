@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Briefcase, Calendar, Download } from 'lucide-react';
+import { Briefcase, Calendar, Download, ArrowUpRight } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const About = () => {
@@ -10,7 +10,8 @@ const About = () => {
       {
          title: 'Software Developer Intern',
          company: 'Mindtech',
-         period: 'Sep. 2025 - Concurrently',
+         url: 'https://mindtech.com.br',
+         period: 'Sep. 2025 - Present',
          description: '',
       },
    ];
@@ -29,15 +30,13 @@ const About = () => {
                   </h2>
 
                   <p className="text-gray-300 leading-relaxed">
-                     I have been continuously developing and refining my technical skills through a wide range of resources, including paid and free
-                     courses, official documentation, educational videos, and more. I maintain a strong commitment to lifelong learning, aiming to
-                     secure a position aligned with my professional profile as a Full-Stack Developer.
+                     I have been continuously developing and refining my technical skills through a wide range of resources, including paid and free courses, official documentation, educational
+                     videos, and more. I maintain a strong commitment to lifelong learning, aiming to secure a position aligned with my professional profile as a Full-Stack Developer.
                   </p>
 
                   <p className="text-gray-300 leading-relaxed">
-                     My approach combines technical expertise with creative problem-solving, enabling me to build digital solutions that meet both
-                     user needs and business objectives. I am constantly learning and adapting to new technologies to stay at the forefront of the
-                     industry.
+                     My approach combines technical expertise with creative problem-solving, enabling me to build digital solutions that meet both user needs and business objectives. I am constantly
+                     learning and adapting to new technologies to stay at the forefront of the industry.
                   </p>
 
                   <div className="pt-4">
@@ -53,27 +52,36 @@ const About = () => {
                   </div>
                </div>
 
-               <div
-                  className={`space-y-6 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-               >
+               <div className={`space-y-6 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                   <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-600 rounded-xl p-6 space-y-6">
                      <h3 className="text-xl font-semibold">Experience</h3>
 
                      <div className="space-y-6">
                         {experiences.map((exp, index) => (
-                           <div
-                              key={index}
-                              className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-dark-600"
-                           >
+                           <div key={index} className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-dark-600">
                               <div className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full bg-primary-400"></div>
 
                               <div className="space-y-2">
                                  <h4 className="font-medium text-white">{exp.title}</h4>
                                  <div className="flex items-center text-sm text-gray-400 space-x-4">
-                                    <div className="flex items-center space-x-1">
-                                       <Briefcase size={14} />
-                                       <span>{exp.company}</span>
-                                    </div>
+                                    {exp.url ? (
+                                       <a
+                                          href={exp.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="inline-flex items-center gap-1 px-2 py-1 rounded-md border border-transparent bg-primary-400/10 hover:bg-primary-400/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 transition-colors group/link"
+                                          aria-label={`Visitar site da empresa ${exp.company}`}
+                                       >
+                                          <Briefcase size={14} className="text-primary-400 group-hover/link:text-primary-300 transition-colors" />
+                                          <span className="font-medium text-primary-300 group-hover/link:underline group-focus/link:underline underline-offset-2 transition-colors">{exp.company}</span>
+                                          <ArrowUpRight size={14} className="text-primary-400 group-hover/link:text-primary-300 transition-colors" />
+                                       </a>
+                                    ) : (
+                                       <div className="flex items-center space-x-1">
+                                          <Briefcase size={14} />
+                                          <span>{exp.company}</span>
+                                       </div>
+                                    )}
                                     <div className="flex items-center space-x-1">
                                        <Calendar size={14} />
                                        <span>{exp.period}</span>
