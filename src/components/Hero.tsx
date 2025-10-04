@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 interface HeroProps {
    scrollY: number;
@@ -7,6 +8,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ scrollY }) => {
    const parallaxRef = useRef<HTMLDivElement>(null);
+   const { t } = useTranslation();
 
    useEffect(() => {
       if (parallaxRef.current) {
@@ -24,28 +26,21 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                      style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
                   >
                      <div className="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></div>
-                     <p className="text-sm text-gray-300">Vinícius Melo | Software Engineer</p>
+                     <p className="text-sm text-gray-300">{t('hero.badge')}</p>
                   </div>
 
                   <h1
                      className="text-4xl md:text-5xl lg:text-6xl font-bold text-center md:text-left leading-tight animate-slide-up opacity-0"
                      style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
                   >
-                     Software <span className="text-primary-400">Developer</span>
-                  </h1>
+                     <Trans i18nKey="hero.title" components={[<span className="text-primary-500" />]} />
+                  </h1> 
 
-                  <p
-                     className="text-lg text-gray-300 max-w-2xl text-center md:text-left animate-slide-up opacity-0"
-                     style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
-                  >
-                     I transform ideas into digital solutions that combine creativity, purpose, and innovation, crafting experiences that impact
-                     people and shape the future of technology.
+                  <p className="text-lg text-gray-300 max-w-2xl text-center md:text-left animate-slide-up opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+                     {t('hero.subtitle')}
                   </p>
 
-                  <div
-                     className="flex flex-col sm:flex-row items-center gap-4 mt-4 animate-slide-up opacity-0"
-                     style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
-                  >
+                  <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 animate-slide-up opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
                      <a
                         href="#contact"
                         onClick={(e) => {
@@ -54,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                         }}
                         className="group bg-primary-500 hover:bg-primary-400 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2"
                      >
-                        Get in touch
+                        {t('hero.ctaContact')}
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                      </a>
 
@@ -66,28 +61,15 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                         }}
                         className="group text-white border border-dark-600 hover:border-primary-400 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:bg-dark-800"
                      >
-                        View Projects
+                        {t('hero.ctaProjects')}
                      </a>
                   </div>
 
-                  <div
-                     className="flex items-center space-x-4 mt-4 animate-slide-up opacity-0"
-                     style={{ animationDelay: '1s', animationFillMode: 'forwards' }}
-                  >
-                     <a
-                        href="https://github.com/videmelo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-primary-400 transition-colors"
-                     >
+                  <div className="flex items-center space-x-4 mt-4 animate-slide-up opacity-0" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
+                     <a href="https://github.com/videmelo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
                         <Github size={20} />
                      </a>
-                     <a
-                        href="https://www.linkedin.com/in/videmelo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-primary-400 transition-colors"
-                     >
+                     <a href="https://www.linkedin.com/in/videmelo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-400 transition-colors">
                         <Linkedin size={20} />
                      </a>
                   </div>
@@ -95,10 +77,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
             </div>
          </div>
 
-         <div
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0 animate-fade-in"
-            style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}
-         >
+         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
             <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
                <div className="w-1 h-2 bg-white rounded-full mt-2 animate-pulse-slow"></div>
             </div>

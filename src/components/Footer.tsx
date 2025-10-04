@@ -1,6 +1,8 @@
 import { ArrowUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+   const { t } = useTranslation();
    return (
       <footer className="bg-dark-800 py-10 border-t border-dark-700 relative">
          <div className="container mx-auto px-4 md:px-6">
@@ -12,10 +14,7 @@ const Footer = () => {
                         folio<span className="text-primary-400">.</span>
                      </span>
                   </a>
-                  <p className="text-gray-300 mb-4 max-w-md">
-                     Creating beautiful digital experiences that combine aesthetic appeal with functional excellence. Specializing in modern web
-                     technologies and human-centered design.
-                  </p>
+                  <p className="text-gray-300 mb-4 max-w-md">{t('footer.desc')}</p>
                   <div className="flex space-x-4">
                      <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
                         <svg
@@ -53,38 +52,38 @@ const Footer = () => {
                </div>
 
                <div>
-                  <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
                   <ul className="space-y-2">
                      <li>
                         <a href="#hero" className="text-gray-300 hover:text-primary-400 transition-colors">
-                           Home
+                           {t('nav.home')}
                         </a>
                      </li>
                      <li>
                         <a href="#about" className="text-gray-300 hover:text-primary-400 transition-colors">
-                           About
+                           {t('nav.about')}
                         </a>
                      </li>
                      <li>
                         <a href="#skills" className="text-gray-300 hover:text-primary-400 transition-colors">
-                           Skills
+                           {t('nav.skills')}
                         </a>
                      </li>
                      <li>
                         <a href="#projects" className="text-gray-300 hover:text-primary-400 transition-colors">
-                           Projects
+                           {t('nav.projects')}
                         </a>
                      </li>
                      <li>
                         <a href="#contact" className="text-gray-300 hover:text-primary-400 transition-colors">
-                           Contact
+                           {t('nav.contact')}
                         </a>
                      </li>
                   </ul>
                </div>
 
                <div>
-                  <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h3>
                   <ul className="space-y-2">
                      <li className="flex items-center space-x-2">
                         <span className="text-primary-400">
@@ -147,7 +146,9 @@ const Footer = () => {
             </div>
 
             <div className="mt-10 pt-6 border-t border-dark-700 flex flex-col md:flex-row justify-between items-center">
-               <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+               <p className="text-gray-400 text-sm">
+                  &copy; {new Date().getFullYear()} {t('footer.brand')}. {t('footer.rights')}
+               </p>
 
                <a
                   href="#hero"
@@ -156,7 +157,7 @@ const Footer = () => {
                      window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="group mt-4 md:mt-0 bg-dark-700 hover:bg-primary-500 p-3 rounded-full text-white transition-colors"
-                  aria-label="Back to top"
+                  aria-label={t('footer.backToTop')}
                >
                   <ArrowUp size={18} />
                </a>

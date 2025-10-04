@@ -1,0 +1,109 @@
+{
+   "nav": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
+   },
+   "hero": {
+      "badge": "Vinícius Melo | Software Engineer",
+      "title": "Software <0>Developer</0>",
+      "subtitle": "I transform ideas into digital solutions that combine creativity, purpose, and innovation, crafting experiences that impact people and shape the future of technology.",
+      "ctaContact": "Get in touch",
+      "ctaProjects": "View Projects"
+   },
+   "about": {
+      "section": "About",
+      "title": "Hi, I’m Vinícius, a <0>Software Developer</0>",
+      "p1": "I'm a software developer focused on modern web applications. I enjoy turning ideas into functional, scalable products by combining solid engineering practices with attention to user experience.",
+      "p2": "I currently work as a software development intern, contributing to projects involving API integrations, automation, and cloud solutions. I'm passionate about performance, architecture, and well-tested code.",
+      "download": "Download Résumé",
+      "primaryStack": "Primary stack",
+      "experience": "Experience",
+      "experiences": [
+         {
+            "title": "Software Developer Intern",
+            "company": "Mindtech",
+            "url": "https://mindtech.com.br",
+            "period": "Sep. 2025 - Present",
+            "description": "Software development on computer vision projects and API integrations."
+         }
+      ],
+      "experienceItem": {
+         "ariaCompany": "Visit company website {{company}}"
+      }
+   },
+   "skills": {
+      "section": "Skills",
+      "title": "Technical Expertise",
+      "desc": "I've cultivated a robust and versatile technical skill set through years of hands-on experience and ongoing professional development. The summary below highlights the core competencies I bring to technology-driven environments.",
+      "categories": {
+         "devLangs": "Development Languages",
+         "frontend": "Front-end Development",
+         "backend": "Back-end Development",
+         "databases": "Databases",
+         "tools": "Tools"
+      }
+   },
+   "projects": {
+      "section": "Projects",
+      "title": "Featured <0>Works</0>",
+      "desc": "A collection of my latest projects from GitHub, automatically updated as I create new ones.",
+      "filters": {
+         "all": "All",
+         "github": "GitHub",
+         "various": "Various",
+         "noDescription": "No description available"
+      },
+      "aria": {
+         "viewOnGithub": "View {{name}} on GitHub",
+         "viewLiveDemo": "View live demo of {{name}}"
+      }
+   },
+   "contact": {
+      "section": "Get In Touch",
+      "title": "Let's Work <0>Together</0>",
+      "desc": "Have a project in mind or just want to say hello? Feel free to reach out to me. I'm always open to discussing new projects and opportunities.",
+      "info": {
+         "title": "Contact Information",
+         "location": "Location",
+         "locationValue": "Curitiba, Parana, Brazil",
+         "email": "Email",
+         "phone": "Phone",
+         "follow": "Follow Me"
+      },
+      "form": {
+         "title": "Send Message",
+         "yourName": "Your Name",
+         "yourEmail": "Your Email",
+         "yourMessage": "Your Message",
+         "placeholders": {
+            "name": "Peter Parker",
+            "email": "peterparker@spiders.com",
+            "message": "Hello, I would like to discuss a project..."
+         },
+         "emailTitle": "Please enter a valid email address",
+         "send": "Send Message",
+         "sending": "Sending...",
+         "success": "Your message has been sent successfully!",
+         "error": "Failed to send message. Please try again later."
+      }
+   },
+   "footer": {
+      "brand": "Portfolio",
+      "desc": "Creating beautiful digital experiences that combine aesthetic appeal with functional excellence. Specializing in modern web technologies and human-centered design.",
+      "quickLinks": "Quick Links",
+      "contactInfo": "Contact Info",
+      "rights": "All rights reserved.",
+      "backToTop": "Back to top"
+   },
+   "common": {
+      "language": {
+         "en": "EN",
+         "ptBR": "PT"
+      }
+   }
+}

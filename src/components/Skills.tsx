@@ -1,19 +1,7 @@
 import { useRef } from 'react';
-import twemoji from 'twemoji';
 import { useInView } from '../hooks/useInView';
-
-const Twemoji = ({ emoji, className = '', size = 24 }: { emoji: string; className?: string; size?: number }) => {
-   const svgHtml = twemoji.parse(emoji, {
-      folder: 'svg',
-      ext: '.svg',
-      base: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/',
-   });
-
-   const match = svgHtml.match(/src="([^"]+)"/);
-   const src = match ? match[1] : undefined;
-   if (!src) return <span>{emoji}</span>;
-   return <img src={src} alt={emoji} width={size} height={size} className={className} style={{ display: 'inline-block', verticalAlign: 'middle' }} draggable={false} />;
-};
+import { useTranslation } from 'react-i18next';
+import Twemoji from './ui/Twemoji';
 
 const Skill = ({ name, level, icon, delay = 0 }: { name: string; level: number; icon: string; delay?: number }) => {
    return (
@@ -61,10 +49,11 @@ const SkillCategory = ({ title, skills, baseDelay = 0 }: { title: string; skills
 const Skills = () => {
    const sectionRef = useRef<HTMLElement>(null);
    const isInView = useInView(sectionRef, { threshold: 0.1 });
+   const { t } = useTranslation();
 
    const skillsData = [
       {
-         title: 'Development Laguages',
+         title: t('skills.categories.devLangs'),
          skills: [
             { name: 'JavaScript', level: 70, icon: '🟨' },
             { name: 'TypeScript', level: 65, icon: '🔷' },
@@ -73,7 +62,7 @@ const Skills = () => {
          baseDelay: 200,
       },
       {
-         title: 'Front-end Development',
+         title: t('skills.categories.frontend'),
          skills: [
             { name: 'Svelte', level: 45, icon: '🟠' },
             { name: 'React', level: 65, icon: '🧩' },
@@ -83,7 +72,7 @@ const Skills = () => {
          baseDelay: 600,
       },
       {
-         title: 'Back-end Development',
+         title: t('skills.categories.backend'),
          skills: [
             { name: 'Node', level: 60, icon: '🟢' },
             { name: 'Express', level: 50, icon: '🚂' },
@@ -92,7 +81,7 @@ const Skills = () => {
          baseDelay: 1200,
       },
       {
-         title: 'Databases',
+         title: t('skills.categories.databases'),
          skills: [
             { name: 'MySQL', level: 35, icon: '🐬' },
             { name: 'PostgreSQL', level: 45, icon: '🐘' },
@@ -100,7 +89,7 @@ const Skills = () => {
          baseDelay: 1600,
       },
       {
-         title: 'Tools',
+         title: t('skills.categories.tools'),
          skills: [
             { name: 'Docker', level: 40, icon: '🐳' },
             { name: 'AWS', level: 20, icon: '☁️' },
@@ -116,15 +105,12 @@ const Skills = () => {
          <div className={`container mx-auto px-4 md:px-6 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="text-center max-w-3xl mx-auto mb-16">
                <div className="inline-flex items-center space-x-2 bg-dark-800/60 backdrop-blur-sm px-4 py-2 rounded-full border border-dark-600 mb-4">
-                  <span className="text-primary-400 font-medium">My Skills</span>
+                  <span className="text-primary-400 font-medium">{t('skills.section')}</span>
                </div>
 
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Expertise</h2>
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('skills.title')}</h2>
 
-               <p className="text-gray-300">
-                  I've cultivated a robust and versatile technical skill set through years of hands-on experience and ongoing professional development. The summary below highlights the core
-                  competencies I bring to technology-driven environments.
-               </p>
+               <p className="text-gray-300">{t('skills.desc')}</p>
             </div>
 
             <div className="space-y-10">

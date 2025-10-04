@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './ui/LanguageSelector';
+import MobileMenu from './ui/MobileMenu';
+import { useScrollLock } from '../hooks/useScrollLock';
 
 interface HeaderProps {
    activeSection: string;
@@ -8,8 +12,12 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeSection }) => {
    const [isOpen, setIsOpen] = useState(false);
    const [isScrolled, setIsScrolled] = useState(false);
+   // Quando clicamos em um link com o menu aberto, aguardamos fechar para rolar
+   const [pendingTarget, setPendingTarget] = useState<string | null>(null);
+   const { lock, unlock } = useScrollLock();
+   const { t } = useTranslation();
 
-   const toggleMenu = () => setIsOpen(!isOpen);
+   const toggleMenu = () => setIsOpen((v) => !v);
 
    useEffect(() => {
       const handleScroll = () => {
@@ -25,37 +33,51 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
    }, []);
 
    useEffect(() => {
-      if (isOpen) {
-         document.body.style.overflow = 'hidden';
-      } else {
-         document.body.style.overflow = 'auto';
-      }
+      if (isOpen) lock();
+      else unlock();
+      return () => unlock();
+   }, [isOpen, lock, unlock]);
 
-      return () => {
-         document.body.style.overflow = 'auto';
-      };
-   }, [isOpen]);
-
-   const scrollToSection = (sectionId: string) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-         element.scrollIntoView({ behavior: 'smooth' });
-         setIsOpen(false);
+   // Após fechar o menu, se houver um alvo pendente, faz o scroll suave
+   useEffect(() => {
+      if (!isOpen && pendingTarget) {
+         const target = pendingTarget;
+         // Aguarda o unlock do body aplicar antes de rolar
+         requestAnimationFrame(() => {
+            const element = document.getElementById(target);
+            if (element) {
+               element.scrollIntoView({ behavior: 'smooth' });
+            }
+            setPendingTarget(null);
+         });
       }
-   };
+   }, [isOpen, pendingTarget]);
+
+   const scrollToSection = useCallback(
+      (sectionId: string) => {
+         const element = document.getElementById(sectionId);
+         if (!element) return;
+
+         if (isOpen) {
+            setPendingTarget(sectionId);
+            setIsOpen(false);
+         } else {
+            element.scrollIntoView({ behavior: 'smooth' });
+         }
+      },
+      [isOpen]
+   );
 
    const navLinks = [
-      { id: 'hero', label: 'Home' },
-      { id: 'about', label: 'About' },
-      { id: 'skills', label: 'Skills' },
-      { id: 'projects', label: 'Projects' },
-      { id: 'contact', label: 'Contact' },
+      { id: 'hero', label: t('nav.home') },
+      { id: 'about', label: t('nav.about') },
+      { id: 'skills', label: t('nav.skills') },
+      { id: 'projects', label: t('nav.projects') },
+      { id: 'contact', label: t('nav.contact') },
    ];
 
    return (
-      <header
-         className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-dark-900/90 backdrop-blur-md' : 'py-5 bg-transparent'}`}
-      >
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-dark-900/90 backdrop-blur-md' : 'py-5 bg-transparent'}`}>
          <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
             <a
                href="#hero"
@@ -82,51 +104,29 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                               e.preventDefault();
                               scrollToSection(link.id);
                            }}
-                           className={`relative py-2 text-sm font-medium transition-colors hover:text-primary-400 ${
-                              activeSection === link.id ? 'text-primary-400' : 'text-gray-300'
-                           }`}
+                           className={`relative py-2 text-sm font-medium transition-colors hover:text-primary-400 ${activeSection === link.id ? 'text-primary-400' : 'text-gray-300'}`}
                         >
                            {link.label}
-                           {activeSection === link.id && (
-                              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-400 rounded-full animate-fade-in" />
-                           )}
+                           {activeSection === link.id && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-400 rounded-full animate-fade-in" />}
                         </a>
                      </li>
                   ))}
                </ul>
             </nav>
 
+            {/* Language Switcher */}
+            <div className="hidden md:flex items-center gap-4">
+               <LanguageSelector />
+            </div>
+
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-white focus:outline-none" onClick={toggleMenu} aria-label={isOpen ? 'Close menu' : 'Open menu'}>
+            <button className="md:hidden text-white focus:outline-none" onClick={toggleMenu} aria-label={isOpen ? t('nav.closeMenu') : t('nav.openMenu')}>
                {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
          </div>
 
-         {/* Mobile Navigation */}
-         <div
-            className={`fixed inset-0 bg-dark-900/95 backdrop-blur-md flex flex-col justify-center items-center transition-transform duration-300 ease-in-out md:hidden ${
-               isOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-         >
-            <nav>
-               <ul className="flex flex-col space-y-8 items-center">
-                  {navLinks.map((link) => (
-                     <li key={link.id} className="text-center">
-                        <a
-                           href={`#${link.id}`}
-                           onClick={(e) => {
-                              e.preventDefault();
-                              scrollToSection(link.id);
-                           }}
-                           className={`text-xl font-medium transition-colors ${activeSection === link.id ? 'text-primary-400' : 'text-gray-300'}`}
-                        >
-                           {link.label}
-                        </a>
-                     </li>
-                  ))}
-               </ul>
-            </nav>
-         </div>
+         {/* Mobile Navigation via Portal */}
+         <MobileMenu open={isOpen} onClose={() => setIsOpen(false)} navLinks={navLinks} activeSection={activeSection} onNavigate={scrollToSection} />
       </header>
    );
 };

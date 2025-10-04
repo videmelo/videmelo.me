@@ -1,0 +1,109 @@
+{
+   "nav": {
+      "home": "Início",
+      "about": "Sobre",
+      "skills": "Habilidades",
+      "projects": "Projetos",
+      "contact": "Contato",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu"
+   },
+   "hero": {
+      "badge": "Vinícius Melo | Engenheiro de Software",
+      "title": "<0>Desenvolvedor</0> de Software",
+      "subtitle": "Transformo ideias em soluções digitais que unem criatividade, propósito e inovação, criando experiências que impactam pessoas e moldam o futuro da tecnologia.",
+      "ctaContact": "Entre em contato",
+      "ctaProjects": "Ver Projetos"
+   },
+   "about": {
+      "section": "Sobre",
+      "title": "Olá, eu sou o Vinícius, um <0>Desenvolvedor de Software</0>",
+      "p1": "Sou desenvolvedor de software focado em aplicações web modernas. Gosto de transformar ideias em produtos funcionais e escaláveis, unindo boas práticas de engenharia com atenção à experiência do usuário.",
+      "p2": "Atualmente atuo como estagiário de desenvolvimento de software, contribuindo com projetos envolvendo integrações de APIs, automação e soluções em nuvem. Sou apaixonado por performance, arquitetura e código bem testado.",
+      "download": "Baixar Currículo",
+      "primaryStack": "Stack principal",
+      "experience": "Experiência",
+      "experiences": [
+         {
+            "title": "Estagiário de Desenvolvimento de Software",
+            "company": "Mindtech",
+            "url": "https://mindtech.com.br",
+            "period": "Set. 2025 - Presente",
+            "description": "Desenvolvimento de software em projetos de visão computacional e integrações de APIs."
+         }
+      ],
+      "experienceItem": {
+         "ariaCompany": "Visitar site da empresa {{company}}"
+      }
+   },
+   "skills": {
+      "section": "Minhas Habilidades",
+      "title": "Conhecimento Técnico",
+      "desc": "Desenvolvi um conjunto de habilidades técnicas robusto e versátil por meio de anos de experiência prática e desenvolvimento profissional contínuo. O resumo abaixo destaca as competências centrais que levo para ambientes orientados à tecnologia.",
+      "categories": {
+         "devLangs": "Linguagens de Desenvolvimento",
+         "frontend": "Desenvolvimento Front-end",
+         "backend": "Desenvolvimento Back-end",
+         "databases": "Bancos de Dados",
+         "tools": "Ferramentas"
+      }
+   },
+   "projects": {
+      "section": "Meus Projetos",
+      "title": "Trabalhos em <0>Destaque</0>",
+      "desc": "Uma coleção dos meus projetos mais recentes do GitHub, atualizada automaticamente conforme crio novos.",
+      "filters": {
+         "all": "Todos",
+         "github": "GitHub",
+         "various": "Vários",
+         "noDescription": "Sem descrição disponível"
+      },
+      "aria": {
+         "viewOnGithub": "Ver {{name}} no GitHub",
+         "viewLiveDemo": "Ver demo ao vivo de {{name}}"
+      }
+   },
+   "contact": {
+      "section": "Fale Comigo",
+      "title": "Vamos Trabalhar <0>Juntos</0>",
+      "desc": "Tem um projeto em mente ou só quer dizer um oi? Sinta-se à vontade para entrar em contato. Estou sempre aberto para discutir novos projetos e oportunidades.",
+      "info": {
+         "title": "Informações de Contato",
+         "location": "Localização",
+         "locationValue": "Curitiba, Paraná, Brasil",
+         "email": "E-mail",
+         "phone": "Telefone",
+         "follow": "Siga-me"
+      },
+      "form": {
+         "title": "Enviar Mensagem",
+         "yourName": "Seu Nome",
+         "yourEmail": "Seu E-mail",
+         "yourMessage": "Sua Mensagem",
+         "placeholders": {
+            "name": "Peter Parker",
+            "email": "peterparker@spiders.com",
+            "message": "Olá, gostaria de discutir um projeto..."
+         },
+         "emailTitle": "Insira um e-mail válido",
+         "send": "Enviar Mensagem",
+         "sending": "Enviando...",
+         "success": "Sua mensagem foi enviada com sucesso!",
+         "error": "Falha ao enviar mensagem. Tente novamente mais tarde."
+      }
+   },
+   "footer": {
+      "brand": "Portfólio",
+      "desc": "Criando experiências digitais bonitas que combinam apelo estético com excelência funcional. Especializado em tecnologias web modernas e design centrado no humano.",
+      "quickLinks": "Links Rápidos",
+      "contactInfo": "Informações de Contato",
+      "rights": "Todos os direitos reservados.",
+      "backToTop": "Voltar ao topo"
+   },
+   "common": {
+      "language": {
+         "en": "EN",
+         "ptBR": "PT"
+      }
+   }
+}
