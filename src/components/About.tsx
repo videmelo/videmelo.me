@@ -12,9 +12,11 @@ const About = () => {
          company: 'Mindtech',
          url: 'https://mindtech.com.br',
          period: 'Sep. 2025 - Present',
-         description: '',
+         description: 'Software development on computer vision projects and API integrations.',
       },
    ];
+
+   const stack = ['TypeScript', 'React', 'Node', 'Prisma', 'PostgreSQL'];
 
    return (
       <section id="about" ref={sectionRef} className="py-20 md:py-32 relative">
@@ -26,35 +28,46 @@ const About = () => {
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold">
-                     A bit about Vinícius Melo, a young <span className="text-primary-400">Full-Stack Developer</span>
+                     Hi, I’m Vinícius, a <span className="text-primary-400">Software Developer</span>
                   </h2>
 
                   <p className="text-gray-300 leading-relaxed">
-                     I have been continuously developing and refining my technical skills through a wide range of resources, including paid and free courses, official documentation, educational
-                     videos, and more. I maintain a strong commitment to lifelong learning, aiming to secure a position aligned with my professional profile as a Full-Stack Developer.
+                     I'm a software developer focused on modern web applications. I enjoy turning ideas into functional, scalable products by combining solid engineering practices with attention to
+                     user experience.
                   </p>
 
                   <p className="text-gray-300 leading-relaxed">
-                     My approach combines technical expertise with creative problem-solving, enabling me to build digital solutions that meet both user needs and business objectives. I am constantly
-                     learning and adapting to new technologies to stay at the forefront of the industry.
+                     I currently work as a software development intern, contributing to projects involving API integrations, automation, and cloud solutions. I'm passionate about performance,
+                     architecture, and well-tested code.
                   </p>
 
-                  <div className="pt-4">
+                  <div className="flex flex-wrap gap-3 pt-2">
                      <a
-                        href="curriculo"
+                        href="/curriculo"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-dark-800 hover:bg-dark-700 border border-dark-600 px-5 py-3 rounded-lg transition-colors"
+                        className="inline-flex items-center gap-2 bg-primary-400 text-black px-4 py-2 rounded-lg hover:brightness-95 transition-colors"
                      >
-                        <Download size={18} />
-                        <span>Download my Resume</span>
+                        <Download size={16} />
+                        <span>Download Résumé</span>
                      </a>
+                  </div>
+
+                  <div className="pt-4">
+                     <h4 className="text-sm text-gray-400 mb-2">Primary stack</h4>
+                     <div className="flex flex-wrap gap-2">
+                        {stack.map((s) => (
+                           <span key={s} className="text-xs px-3 py-1 bg-dark-800/60 border border-dark-600 rounded-full">
+                              {s}
+                           </span>
+                        ))}
+                     </div>
                   </div>
                </div>
 
                <div className={`space-y-6 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                   <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-600 rounded-xl p-6 space-y-6">
-                     <h3 className="text-xl font-semibold">Experience</h3>
+                     <h3 className="text-xl font-semibold">Experiência</h3>
 
                      <div className="space-y-6">
                         {experiences.map((exp, index) => (
