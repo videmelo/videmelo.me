@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                      className="text-4xl md:text-5xl lg:text-6xl font-bold text-center md:text-left leading-tight animate-slide-up opacity-0"
                      style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
                   >
-                     Developer <span className="text-primary-400">Full-Stack</span>
+                     Software <span className="text-primary-400">Developer</span>
                   </h1>
 
                   <p

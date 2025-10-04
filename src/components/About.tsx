@@ -67,7 +67,7 @@ const About = () => {
 
                <div className={`space-y-6 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                   <div className="bg-dark-800/50 backdrop-blur-sm border border-dark-600 rounded-xl p-6 space-y-6">
-                     <h3 className="text-xl font-semibold">Experiência</h3>
+                     <h3 className="text-xl font-semibold">Experience</h3>
 
                      <div className="space-y-6">
                         {experiences.map((exp, index) => (
