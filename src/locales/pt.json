@@ -17,13 +17,36 @@
    },
    "about": {
       "section": "Sobre",
-      "title": "Olá, eu sou o Vinícius, um <0>Desenvolvedor de Software</0>",
-      "p1": "Sou desenvolvedor de software focado em aplicações web modernas. Gosto de transformar ideias em produtos funcionais e escaláveis, unindo boas práticas de engenharia com atenção à experiência do usuário.",
-      "p2": "Atualmente atuo como estagiário de desenvolvimento de software, contribuindo com projetos envolvendo integrações de APIs, automação e soluções em nuvem. Sou apaixonado por performance, arquitetura e código bem testado.",
+      "title": "Olá, eu sou o <0>Vinícius</0>",
+      "p1": "Um desenvolvedor de software full-stack apaixonado por criar aplicações web modernas e eficientes. Gosto de transformar ideias em produtos funcionais e escaláveis, combinando boas práticas de engenharia com foco na experiência do usuário.",
+      "p2": "Atualmente atuo como estagiário de desenvolvimento de software, contribuindo com projetos envolvendo integrações de APIs, automação e soluções em nuvem.",
       "download": "Baixar Currículo",
       "primaryStack": "Stack principal",
-      "experience": "Experiência",
+      "experience": "Jornada",
       "experiences": [
+         {
+            "type": "course",
+            "title": "Iniciei meus estudos em programação",
+            "company": "Cursos Online",
+            "period": "Mar. 2023",
+            "description": "Cursos de HTML, CSS, JavaScript, React e Git."
+         },
+         {
+            "type": "project",
+            "title": "Criei meu primeiro grande projeto",
+            "company": "Omni Bot",
+            "url": "https://github.com/videmelo/omni-bot",
+            "period": "Jul. 2023",
+            "description": "Um bot para Discord com várias funcionalidades, incluindo moderação, jogos e integração com APIs externas."
+         },
+         {
+            "type": "education",
+            "title": "Entrei na faculdade de Engenharia de Software",
+            "company": "Universidade Positivo",
+            "url": "https://up.edu.br",
+            "period": "Fev. 2025 - Presente",
+            "description": "Cursando Engenharia de Software."
+         },
          {
             "title": "Estagiário de Desenvolvimento de Software",
             "company": "Mindtech",
@@ -94,7 +117,7 @@
    },
    "footer": {
       "brand": "Portfólio",
-      "desc": "Criando experiências digitais bonitas que combinam apelo estético com excelência funcional. Especializado em tecnologias web modernas e design centrado no humano.",
+      "desc": "Uma vitrine do meu trabalho, habilidades e experiência como desenvolvedor de software.",
       "quickLinks": "Links Rápidos",
       "contactInfo": "Informações de Contato",
       "rights": "Todos os direitos reservados.",

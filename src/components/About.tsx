@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Briefcase, Calendar, Download, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Calendar, Download, ArrowUpRight, GraduationCap, Book, FolderGit2 } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { useTranslation, Trans } from 'react-i18next';
 
@@ -63,26 +63,27 @@ const About = () => {
                               <div className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full bg-primary-400"></div>
 
                               <div className="space-y-2">
-                                 <h4 className="font-medium text-white">{exp.title}</h4>
-                                 <div className="flex items-center text-sm text-gray-400 space-x-4">
+                                 <div className="flex items-center justify-between">
+                                    <h4 className="font-medium text-white">{exp.title}</h4>
                                     {exp.url ? (
                                        <a
                                           href={exp.url}
                                           target="_blank"
                                           rel="noopener noreferrer"
-                                          className="inline-flex items-center gap-1 px-2 py-1 rounded-md border border-transparent bg-primary-400/10 hover:bg-primary-400/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 transition-colors group/link"
-                                          aria-label={t('about.experienceItem.ariaCompany', { company: exp.company })}
+                                          className="text-gray-400 hover:text-primary-400 transition-colors"
+                                          aria-label={t('projects.aria.viewLiveDemo', { name: exp.title })}
                                        >
-                                          <Briefcase size={14} className="text-primary-400 group-hover/link:text-primary-300 transition-colors" />
-                                          <span className="font-medium text-primary-300 group-hover/link:underline group-focus/link:underline underline-offset-2 transition-colors">{exp.company}</span>
-                                          <ArrowUpRight size={14} className="text-primary-400 group-hover/link:text-primary-300 transition-colors" />
+                                          <ArrowUpRight size={18} />
                                        </a>
-                                    ) : (
+                                    ) : null}
+                                 </div>
+                                 <div className="flex items-center text-sm text-gray-400 space-x-4">
+                                    {exp.company ? (
                                        <div className="flex items-center space-x-1">
-                                          <Briefcase size={14} />
+                                          { exp.type === 'project' ? <FolderGit2 size={14} /> : exp.type === 'education' ? <GraduationCap size={14} /> : exp.type === 'course' ? <Book size={14} /> : <Briefcase size={14} /> }
                                           <span>{exp.company}</span>
                                        </div>
-                                    )}
+                                    ) : null}
                                     <div className="flex items-center space-x-1">
                                        <Calendar size={14} />
                                        <span>{exp.period}</span>

@@ -17,13 +17,36 @@
    },
    "about": {
       "section": "About",
-      "title": "Hi, I’m Vinícius, a <0>Software Developer</0>",
-      "p1": "I'm a software developer focused on modern web applications. I enjoy turning ideas into functional, scalable products by combining solid engineering practices with attention to user experience.",
-      "p2": "I currently work as a software development intern, contributing to projects involving API integrations, automation, and cloud solutions. I'm passionate about performance, architecture, and well-tested code.",
+      "title": "Hi, I’m <0>Vinícius</0>",
+      "p1": "A passionate full-stack software developer dedicated to creating modern and efficient web applications. I enjoy turning ideas into functional and scalable products by combining best engineering practices with a focus on user experience.",
+      "p2": "I am currently working as a software development intern, contributing to projects involving API integrations, automation, and cloud solutions.",
       "download": "Download Résumé",
       "primaryStack": "Primary stack",
-      "experience": "Experience",
+      "experience": "Journey",
       "experiences": [
+         {
+            "type": "course",
+            "title": "Started my programming studies",
+            "company": "Online Courses",
+            "period": "Mar. 2023",
+            "description": "Courses on HTML, CSS, JavaScript, React, and Git."
+         },
+         {
+            "type": "project",
+            "title": "Built my first major project",
+            "company": "Omni Bot",
+            "url": "https://githuv.com/videmelo/omni-bot",
+            "period": "Jul. 2023",
+            "description": "A Discord bot with various features, including moderation, games, and integration with external APIs."
+         },
+         {
+            "type": "education",
+            "title": "Started Software Engineering degree",
+            "company": "Positivo University",
+            "url": "https://up.edu.br",
+            "period": "Feb. 2025 - Present",
+            "description": "Pursuing a degree in Software Engineering."
+         },
          {
             "title": "Software Developer Intern",
             "company": "Mindtech",
@@ -94,7 +117,7 @@
    },
    "footer": {
       "brand": "Portfolio",
-      "desc": "Creating beautiful digital experiences that combine aesthetic appeal with functional excellence. Specializing in modern web technologies and human-centered design.",
+      "desc": "A showcase of my work, skills, and experience as a software developer.",
       "quickLinks": "Quick Links",
       "contactInfo": "Contact Info",
       "rights": "All rights reserved.",
