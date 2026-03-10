@@ -65,7 +65,6 @@ const Projects = () => {
          try {
             setLoading(true);
 
-            // Fetch GitHub projects
             const githubResponse = await fetch('https://api.github.com/users/videmelo/repos?per_page=100&sort=created&direction=desc');
             if (!githubResponse.ok) throw new Error('Failed to fetch GitHub projects');
             const githubData: GitHubRepo[] = await githubResponse.json();
@@ -82,7 +81,6 @@ const Projects = () => {
 
       fetchProjects();
 
-      // Set up polling to check for new projects every 5 minutes
       const interval = setInterval(fetchProjects, 5 * 60 * 1000);
 
       return () => clearInterval(interval);
@@ -103,7 +101,6 @@ const Projects = () => {
       return () => document.removeEventListener('click', handleProjectsClick);
    }, []);
 
-   // Sincroniza o valor do filtro com o idioma atual (e.g. 'All' -> 'Todos')
    useEffect(() => {
       setFilter(t('projects.filters.all'));
    }, [i18n.language, t]);
@@ -118,10 +115,10 @@ const Projects = () => {
       filter === t('projects.filters.all')
          ? projects
          : filter === 'GitHub'
-         ? projects.filter((project) => project.source === 'github')
-         : filter === t('projects.filters.various')
-         ? projects.filter((project) => !project.language)
-         : projects.filter((project) => project.language === filter);
+           ? projects.filter((project) => project.source === 'github')
+           : filter === t('projects.filters.various')
+             ? projects.filter((project) => !project.language)
+             : projects.filter((project) => project.language === filter);
 
    const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
       const cardRef = useRef<HTMLDivElement>(null);

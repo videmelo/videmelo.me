@@ -1,9 +1,5 @@
 import { useCallback, useRef } from 'react';
 
-/**
- * Bloqueia o scroll da página sem causar "jump" e restaura após desbloquear.
- * Implementa o padrão body position: fixed com restauração do scroll e compensação do scrollbar.
- */
 export function useScrollLock() {
    const lockedRef = useRef(false);
    const scrollYRef = useRef(0);
@@ -15,13 +11,12 @@ export function useScrollLock() {
    };
 
    const lock = useCallback(() => {
-      if (lockedRef.current) return; // idempotente
+      if (lockedRef.current) return;
       if (typeof window === 'undefined') return;
 
       const body = document.body as HTMLBodyElement;
       scrollYRef.current = window.scrollY;
 
-      // Compensa a remoção do scrollbar
       prevPaddingRightRef.current = body.style.paddingRight;
       const scrollBarWidth = getScrollbarWidth();
       if (scrollBarWidth > 0) {
@@ -38,7 +33,7 @@ export function useScrollLock() {
    }, []);
 
    const unlock = useCallback(() => {
-      if (!lockedRef.current) return; // idempotente
+      if (!lockedRef.current) return;
       if (typeof window === 'undefined') return;
 
       const body = document.body as HTMLBodyElement;

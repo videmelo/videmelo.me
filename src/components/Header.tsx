@@ -12,7 +12,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeSection }) => {
    const [isOpen, setIsOpen] = useState(false);
    const [isScrolled, setIsScrolled] = useState(false);
-   // Quando clicamos em um link com o menu aberto, aguardamos fechar para rolar
+
    const [pendingTarget, setPendingTarget] = useState<string | null>(null);
    const { lock, unlock } = useScrollLock();
    const { t } = useTranslation();
@@ -38,11 +38,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       return () => unlock();
    }, [isOpen, lock, unlock]);
 
-   // Após fechar o menu, se houver um alvo pendente, faz o scroll suave
    useEffect(() => {
       if (!isOpen && pendingTarget) {
          const target = pendingTarget;
-         // Aguarda o unlock do body aplicar antes de rolar
+
          requestAnimationFrame(() => {
             const element = document.getElementById(target);
             if (element) {
@@ -93,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                </span>
             </a>
 
-            {/* Desktop Navigation */}
+            {}
             <nav className="hidden md:block">
                <ul className="flex space-x-8">
                   {navLinks.map((link) => (
@@ -114,18 +113,18 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                </ul>
             </nav>
 
-            {/* Language Switcher */}
+            {}
             <div className="hidden md:flex items-center gap-4">
                <LanguageSelector />
             </div>
 
-            {/* Mobile Menu Button */}
+            {}
             <button className="md:hidden text-white focus:outline-none" onClick={toggleMenu} aria-label={isOpen ? t('nav.closeMenu') : t('nav.openMenu')}>
                {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
          </div>
 
-         {/* Mobile Navigation via Portal */}
+         {}
          <MobileMenu open={isOpen} onClose={() => setIsOpen(false)} navLinks={navLinks} activeSection={activeSection} onNavigate={scrollToSection} />
       </header>
    );

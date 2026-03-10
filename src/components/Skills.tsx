@@ -55,8 +55,8 @@ const Skills = () => {
       {
          title: t('skills.categories.devLangs'),
          skills: [
-            { name: 'JavaScript', level: 70, icon: '🟨' },
-            { name: 'TypeScript', level: 65, icon: '🔷' },
+            { name: 'JavaScript', level: 90, icon: '🟨' },
+            { name: 'TypeScript', level: 80, icon: '🔷' },
             { name: 'Python', level: 25, icon: '🐍' },
          ],
          baseDelay: 200,
@@ -64,17 +64,17 @@ const Skills = () => {
       {
          title: t('skills.categories.frontend'),
          skills: [
-            { name: 'Svelte', level: 45, icon: '🟠' },
+            { name: 'Svelte', level: 85, icon: '🟠' },
             { name: 'React', level: 65, icon: '🧩' },
             { name: 'Next', level: 25, icon: '🔗' },
-            { name: 'React Native', level: 20, icon: '📱' },
+            { name: 'React Native', level: 40, icon: '📱' },
          ],
          baseDelay: 600,
       },
       {
          title: t('skills.categories.backend'),
          skills: [
-            { name: 'Node', level: 60, icon: '🟢' },
+            { name: 'Node', level: 70, icon: '🟢' },
             { name: 'Express', level: 50, icon: '🚂' },
             { name: 'WebSocket', level: 30, icon: '📡' },
          ],
@@ -91,10 +91,10 @@ const Skills = () => {
       {
          title: t('skills.categories.tools'),
          skills: [
-            { name: 'Docker', level: 40, icon: '🐳' },
+            { name: 'Docker', level: 60, icon: '🐳' },
             { name: 'AWS', level: 20, icon: '☁️' },
             { name: 'Git', level: 70, icon: '🔧' },
-            { name: 'Linux', level: 50, icon: '🐧' },
+            { name: 'Linux', level: 60, icon: '🐧' },
          ],
          baseDelay: 2000,
       },
@@ -120,7 +120,7 @@ const Skills = () => {
             </div>
          </div>
 
-         {/* Decorative elements */}
+         {}
          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
       </section>

@@ -2,7 +2,6 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Resources serão carregados dinamicamente via import() (code-splitting)
 const loadLocale = async (lng: string) => {
    switch (lng) {
       case 'pt':
@@ -13,7 +12,6 @@ const loadLocale = async (lng: string) => {
    }
 };
 
-// Plugin simples para lazy load dos recursos ao mudar de idioma
 const backend = {
    type: 'backend' as const,
    init: () => {},

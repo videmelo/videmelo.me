@@ -34,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                      style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
                   >
                      <Trans i18nKey="hero.title" components={[<span className="text-primary-500" />]} />
-                  </h1> 
+                  </h1>
 
                   <p className="text-lg text-gray-300 max-w-2xl text-center md:text-left animate-slide-up opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
                      {t('hero.subtitle')}
@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
             </div>
          </div>
 
-         {/* Decorative elements */}
+         {}
          <div className="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full bg-primary-600/10 blur-[100px]"></div>
          <div className="absolute top-[20%] left-[10%] w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
          <div className="absolute top-[15%] right-[30%] w-1 h-1 bg-accent-teal rounded-full animate-pulse"></div>

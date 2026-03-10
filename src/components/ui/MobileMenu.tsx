@@ -19,7 +19,6 @@ interface MobileMenuProps {
 const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose, navLinks, activeSection, onNavigate }) => {
    useTranslation();
 
-   // Fecha com ESC
    useEffect(() => {
       if (!open) return;
       const onKeyDown = (e: KeyboardEvent) => {
@@ -34,10 +33,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ open, onClose, navLinks, active
 
    return createPortal(
       <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation" onClick={onClose}>
-         {/* Background overlay */}
+         {}
          <div className="absolute inset-0 bg-dark-900/95 backdrop-blur-md" />
 
-         {/* Panel */}
+         {}
          <div className="absolute inset-0 flex flex-col justify-center items-center transition-transform duration-300 ease-in-out translate-x-0" onClick={(e) => e.stopPropagation()}>
             <nav>
                <ul className="flex flex-col space-y-8 items-center">
