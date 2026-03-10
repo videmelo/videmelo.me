@@ -92,7 +92,7 @@ const Skills = () => {
          title: t('skills.categories.tools'),
          skills: [
             { name: 'Docker', level: 60, icon: '🐳' },
-            { name: 'AWS', level: 20, icon: '☁️' },
+            { name: 'AWS', level: 20, icon: '⛅' },
             { name: 'Git', level: 70, icon: '🔧' },
             { name: 'Linux', level: 60, icon: '🐧' },
          ],
